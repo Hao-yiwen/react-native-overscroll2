@@ -1,19 +1,21 @@
-import codegenNativeComponent from 'react-native/Libraries/Utilities/codegenNativeComponent';
-import type { ViewProps, HostComponent } from 'react-native';
-import type {
-  DirectEventHandler,
-  Float,
-  Int32,
-} from 'react-native/Libraries/Types/CodegenTypes';
+import {
+  codegenNativeComponent,
+  type CodegenTypes,
+  type HostComponent,
+  type ViewProps,
+} from 'react-native';
 
 export type OnOverscrollEvent = Readonly<{
-  state: Int32;
-  offset: Float;
+  state: CodegenTypes.Int32;
+  offset: CodegenTypes.Float;
 }>;
 
 export interface NativeProps extends ViewProps {
   bounce: boolean;
-  onOverscroll?: DirectEventHandler<OnOverscrollEvent, 'onOverscroll'>;
+  onOverscroll?: CodegenTypes.DirectEventHandler<
+    OnOverscrollEvent,
+    'onOverscroll'
+  >;
 }
 
 export default codegenNativeComponent<NativeProps>(

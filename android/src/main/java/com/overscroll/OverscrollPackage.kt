@@ -13,6 +13,7 @@ class OverscrollViewPackage : ReactPackage {
     return viewManagers
   }
 
+  @Deprecated("This method is unused in the New Architecture and will be removed")
   override fun createNativeModules(reactContext: ReactApplicationContext): List<NativeModule> {
     return emptyList()
   }

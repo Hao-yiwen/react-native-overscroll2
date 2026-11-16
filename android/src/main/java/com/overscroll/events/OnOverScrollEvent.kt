@@ -3,7 +3,6 @@ package com.overscroll.events
 import com.facebook.react.bridge.Arguments
 import com.facebook.react.bridge.WritableMap
 import com.facebook.react.uimanager.events.Event
-import com.facebook.react.uimanager.events.RCTEventEmitter
 
 class OnOverScrollEvent(
   surfaceId: Int,

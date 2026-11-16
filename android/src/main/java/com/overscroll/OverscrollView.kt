@@ -10,7 +10,6 @@ import android.widget.ListView
 import android.widget.ScrollView
 import com.facebook.react.uimanager.ThemedReactContext
 import com.facebook.react.uimanager.UIManagerHelper
-import com.facebook.react.uimanager.UIManagerModule
 import com.overscroll.events.OnOverScrollEvent
 import me.everything.android.ui.overscroll.IOverScrollDecor
 import me.everything.android.ui.overscroll.OverScrollDecoratorHelper
@@ -74,7 +73,7 @@ class OverscrollView : FrameLayout {
   private fun sendOverScrollEvent(state: Int, offset: Float) {
     Log.d("OverscrollView", "sendOverScrollEvent: $state, $offset")
     val mContext = getThemeReactContext()
-    val dispatcher = UIManagerHelper.getEventDispatcherForReactTag(mContext, id)
+    val dispatcher = UIManagerHelper.getEventDispatcher(mContext)
     val surfaceId: Int = UIManagerHelper.getSurfaceId(this)
     dispatcher?.dispatchEvent(OnOverScrollEvent(surfaceId, id, state, offset))
   }
